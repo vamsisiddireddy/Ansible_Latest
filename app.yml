@@ -1,0 +1,19 @@
+---
+- name: Run a Command Only Once
+  hosts: all
+  tasks:
+    - name: Check if the lock file exists
+      stat:
+        path: /tmp/command_lock
+      register: lock_file
+
+    - name: Execute the command if the lock file doesn't exist
+      command: ls
+      when: lock_file.stat.exists == false
+
+    - name: Create the lock file (mark the command as executed)
+      file:
+        path: /tmp/command_lock
+        state: touch
+      when: lock_file.stat.exists == false
+

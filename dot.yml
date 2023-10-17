@@ -1,0 +1,8 @@
+---
+- name: Install .NET Core
+  hosts: all
+  become: yes
+  tags: dotnet
+  roles:
+    - Dotnet
+
