@@ -15,6 +15,7 @@
   file:
     src: "/etc/nginx/sites-available/{{ item.name }}"
     dest: "/etc/nginx/sites-enabled/{{ item.name }}"
+    state: link
   notify: Reload Nginx
   with_items: "{{ virtualhosts }}"
 
