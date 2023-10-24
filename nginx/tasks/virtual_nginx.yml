@@ -1,0 +1,21 @@
+# roles/nginx_config/tasks/main.yml
+- name: Install Nginx
+  apt:
+    name: nginx
+    state: present
+  when: nginx_install
+
+- name: Configure Nginx Virtual Hosts
+  template:
+    src: virtual_host.j2
+    dest: /etc/nginx/sites-available/{{ item.server_name }}
+  loop: "{{ nginx_virtual_hosts }}"
+  notify: Reload Nginx
+
+- name: Enable Nginx Virtual Hosts
+  file:
+    src: /etc/nginx/sites-available/{{ item.server_name }}
+    dest: /etc/nginx/sites-enabled/{{ item.server_name }}
+    state: link
+  loop: "{{ nginx_virtual_hosts }}"
+  notify: Reload Nginx
