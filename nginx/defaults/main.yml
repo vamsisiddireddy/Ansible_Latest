@@ -1,8 +1,12 @@
 ---
 # defaults file for nginx
-# roles/nginx_config/defaults/main.yml
-nginx_install: yes
-nginx_virtual_hosts:
-  - server_name: example.com
-    document_root: /var/www/example
+---
+virtualhosts:
+  - name: example1.com
+    server_name: example1.com www.example1.com
+    document_root: /var/www/example1
+
+  - name: example2.com
+    server_name: example2.com www.example2.com
+    document_root: /var/www/example2
 

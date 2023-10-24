@@ -1,0 +1,10 @@
+server {
+    listen 80;
+    server_name {{ item.server_name }};
+    root {{ item.document_root }};
+    access_log /var/log/nginx/{{ item.server_name }}.access.log;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}

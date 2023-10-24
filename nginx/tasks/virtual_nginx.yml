@@ -4,17 +4,11 @@
     name: nginx
     state: present
 
-- name: Configure Nginx Virtual Hosts
+---
+- name: Create Nginx Virtual Host
   template:
-    src: virtual_host.j2
-    dest: /etc/nginx/sites-available/{{ item.server_name }}
-  loop: "{{ nginx_virtual_hosts }}"
+    src: virtualhostconf.j2
+    dest: /etc/nginx/sites-available/{{ item.name }}
   notify: Reload Nginx
+  with_items: "{{ virtualhosts }}"
 
-- name: Enable Nginx Virtual Hosts
-  file:
-    src: /etc/nginx/sites-available/{{ item.server_name }}
-    dest: /etc/nginx/sites-enabled/{{ item.server_name }}
-    state: link
-  loop: "{{ nginx_virtual_hosts }}"
-  notify: Reload Nginx
