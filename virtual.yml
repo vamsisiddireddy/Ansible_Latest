@@ -1,0 +1,6 @@
+- name: Configure Nginx
+  hosts: your_target_hosts
+  become: yes
+  roles:
+    - nginx_config
+
