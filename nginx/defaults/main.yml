@@ -1,6 +1,5 @@
 ---
 # defaults file for nginx
----
 virtualhosts:
   - name: example1.com
     server_name: example1.com www.example1.com
