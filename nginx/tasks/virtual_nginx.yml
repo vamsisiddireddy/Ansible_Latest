@@ -3,11 +3,18 @@
   apt:
     name: nginx
     state: present
-    
+
 - name: Create Nginx Virtual Host
   template:
     src: virtualhostconf.j2
     dest: /etc/nginx/sites-available/{{ item.name }}
+  notify: Reload Nginx
+  with_items: "{{ virtualhosts }}"
+
+- name: Create symbolic link for Nginx Virtual Host
+  file:
+    src: "/etc/nginx/sites-available/{{ item.name }}"
+    dest: "/etc/nginx/sites-enabled/{{ item.name }}"
   notify: Reload Nginx
   with_items: "{{ virtualhosts }}"
 
