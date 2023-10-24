@@ -3,7 +3,6 @@
   apt:
     name: nginx
     state: present
-  when: nginx_install
 
 - name: Configure Nginx Virtual Hosts
   template:
