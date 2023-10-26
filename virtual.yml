@@ -2,5 +2,9 @@
   hosts: all
   become: yes
   roles:
-    - nginx
-
+  - name: nginx
+    tags: 
+      - virtual_setup
+  - name: tomcat
+    tags: 
+      - tomcat_setup
