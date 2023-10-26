@@ -4,4 +4,4 @@
     state: present
     shell: /bin/bash  
     createhome: yes
-    password: tomcat
+    password: "tomcat"
