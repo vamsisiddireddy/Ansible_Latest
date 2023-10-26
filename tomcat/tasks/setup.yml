@@ -1,7 +1,8 @@
 - name: Create a user
   user:
     name: tomcat
-    state: present
+    state: absent
     shell: /bin/bash  
     createhome: yes
     password: "tomcat"
+    force: yes
