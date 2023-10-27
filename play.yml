@@ -2,9 +2,10 @@
   hosts: all
   become: yes
   tasks:
-    - name: update cache
+    - name: Update and upgrade packages
       apt:
         update_cache: yes
+        upgrade: dist
   roles:
   - name: nginx
     tags: 
