@@ -13,6 +13,13 @@
   apt:
     name: default-jdk
     state: present
+- name: Create a Tomcat Directory
+  file:
+    path: /opt/tomcat
+    owner: tomcat
+    group: tomcat
+    mode: 755
+    recurse: yes
 - name: download & unarchive tomcat10 
   unarchive:
     src: "{{ url }}"
