@@ -15,5 +15,5 @@
     state: present
 - name: extract tar file in remote machine
   unarchive: 
-    src: https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.82/bin/apache-tomcat-9.0.82.tar.gz
-    dest: /opt
+    src: "https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.82/bin/apache-tomcat-9.0.82.tar.gz"
+    dest: /opt/
