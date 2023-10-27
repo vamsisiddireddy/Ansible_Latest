@@ -1,5 +1,5 @@
 ---
 # tasks file for nginx
 - name: installing nginx
-  import_tasks: virtual_nginx.yml
+  import_tasks: debian.yml
   when: ansible_os_family == "Debian" 
