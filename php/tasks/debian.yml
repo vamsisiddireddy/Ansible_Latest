@@ -13,7 +13,7 @@
 - name: update cache
   apt:
     update_cache: yes
-- name: Install required python version
+- name: Install required php version
   apt:
     name: php{{req_version}}
 - name: Switch required version 
