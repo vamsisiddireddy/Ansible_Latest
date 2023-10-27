@@ -4,4 +4,4 @@
     state: present
     shell: /bin/bash  
     createhome: yes
-    password: "{ "{user_password}" | password_hash('sha512') }}"
+    password: "{{ tomcat | password_hash('sha512') }}"
