@@ -30,8 +30,4 @@
   template:
     src: service.j2
     dest: /etc/systemd/system/tomcat.service
-- name: Start and Enable Tomcat 10 on sever
-  systemd:
-    name: tomcat
-    state: started
-    daemon_reload: true
+  notify: triggered
