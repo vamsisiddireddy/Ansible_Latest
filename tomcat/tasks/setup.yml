@@ -5,3 +5,7 @@
     shell: /bin/bash  
     createhome: yes
     password: "{{ 'tomcat' | password_hash('sha512') }}"
+- name: create a group
+  group:
+    name: tomcat
+    state: present
