@@ -1,6 +1,9 @@
 - name: Executing main playbook
   hosts: all
   become: yes
+  tasks:
+  apt:
+    update_cache: yes
   roles:
   - name: nginx
     tags: 
