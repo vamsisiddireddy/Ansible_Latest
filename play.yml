@@ -2,8 +2,9 @@
   hosts: all
   become: yes
   tasks:
-  apt:
-    update_cache: yes
+  - name: update cache
+    apt:
+      update_cache: yes
   roles:
   - name: nginx
     tags: 
