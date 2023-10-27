@@ -14,4 +14,31 @@
   - name: php
     tags: 
       - php
+  - name: usercreation
+    tags:
+      - usercreation
+
+  - name: packageinstallation
+    tags:
+      - packageinstallation
+
+  - name: fileoperation
+    tags:
+      - fileoperation
+
+  - name: directory
+    tags:
+      - directory
+
+  - name: cron
+    tags:
+      - cron
+
+  - name: java
+    tags:
+      - java
+
+  - name: python
+    tags:
+      - python
 
