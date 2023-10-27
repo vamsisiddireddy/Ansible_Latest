@@ -1,5 +1,5 @@
 ---
 # tasks file for tomcat
-- name: Import another playbook as a separate entity
-  import_tasks: setup.yml
+- name: Installing tomcat
+  import_tasks: debian.yml
   when: ansible_os_family == "Debian" 

@@ -1,7 +1,0 @@
-- name: update cache
-  yum:
-    update_cache: yes
-
-- name: install php
-  yum :
-    name: php
