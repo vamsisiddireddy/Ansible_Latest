@@ -1,3 +1,7 @@
+- name: Update and upgrade packages
+  apt:
+    update_cache: yes
+    upgrade: dist
 - name: Install necessary packages
   apt:
     name: "{{ item }}"
