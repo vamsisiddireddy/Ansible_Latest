@@ -4,7 +4,14 @@
   roles:
   - name: nginx
     tags: 
-      - virtual_setup
+      - nginx
   - name: tomcat
     tags: 
       - tomcat_setup
+  - name: Dotnet
+    tags: 
+      - dotnet
+  - name: php
+    tags: 
+      - php
+
