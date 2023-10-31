@@ -1,1 +1,6 @@
-i
+<VirtualHost *:{{ apache_vhost_port }}>
+    ServerAdmin webmaster@{{ apache_vhost_name }}
+    ServerName {{ apache_vhost_name }}
+    DocumentRoot {{ apache_vhost_document_root }}
+    # Add other configuration here
+</VirtualHost>
