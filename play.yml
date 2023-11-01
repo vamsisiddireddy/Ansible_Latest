@@ -45,5 +45,8 @@
   - name: jenkins 
     tags:
       - jenkins
+  - name: apache
+    tags:
+      - apache
 
 
