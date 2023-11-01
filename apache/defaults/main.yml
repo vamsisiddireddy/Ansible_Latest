@@ -7,3 +7,6 @@ apache_vhosts:
   - name: example2.com
     port: 80
     document_root: /var/www/example2.com
+apache_vhost_port: 80
+apache_vhost_name: example1.com
+apache_vhost_document_root: /var/www/example2.com
