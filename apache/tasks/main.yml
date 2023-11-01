@@ -1,2 +1,5 @@
 ---
 # tasks file for apache
+- name: installing apach2
+  import_tasks: debian.yml
+  when: ansible_os_family == "Debian" 

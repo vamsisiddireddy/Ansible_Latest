@@ -14,4 +14,3 @@
     dest: "/etc/apache2/sites-available/{{ item.name }}.conf"
   notify: Reload Apache
   with_items: "{{ apache_vhosts }}"
-
