@@ -1,4 +1,8 @@
 ---
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
 - name: download splunk
   get_url:
     url: "{{ splunk_url }}"

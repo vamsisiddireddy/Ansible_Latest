@@ -1,0 +1,4 @@
+---
+# tasks file for redis
+- name: import tasks
+  include_tasks: debian.yml
