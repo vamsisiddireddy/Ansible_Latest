@@ -22,8 +22,8 @@
     state: present
 
 - name: Audit Ubuntu system for CIS compliance
-  command: "usg audit {{ level_1 }}"
+  command: "usg audit {{ level_2 }}"
 
 - name: Fix CIS Level 1 server audit findings
-  command: "usg fix {{ level_1 }}"
+  command: "usg fix {{ level_2 }}"
 
