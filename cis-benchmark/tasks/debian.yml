@@ -1,0 +1,29 @@
+- name: Update apt package cache
+  apt:
+    update_cache: yes
+
+- name: Upgrade all packages
+  apt:
+    upgrade: yes
+    autoremove: yes
+
+- name: Install ubuntu-advantage-tools
+  apt:
+    name: ubuntu-advantage-tools
+    state: present
+
+- name: Enable usg by using ua client
+  command: "ua enable usg"
+  ignore_errors: yes
+
+- name: Install usg package
+  apt:
+    name: usg
+    state: present
+
+- name: Audit Ubuntu system for CIS compliance
+  command: "usg audit {{ level_1 }}"
+
+- name: Fix CIS Level 1 server audit findings
+  command: "usg fix {{ level_1 }}"
+

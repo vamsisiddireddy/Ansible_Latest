@@ -51,4 +51,6 @@
   - name: redis
     tags:
       - redis
-
+  - name: cis-benchmark
+    tags:
+      - cis-benchmark
