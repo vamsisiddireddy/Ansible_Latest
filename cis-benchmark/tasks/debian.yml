@@ -16,6 +16,14 @@
   command: "ua enable usg"
   ignore_errors: yes
 
+- name: Update SSHd configuration
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^PasswordAuthentication'
+    line: 'PasswordAuthentication yes'
+  notify:
+    - restart sshd
+
 - name: Install usg package
   apt:
     name: usg
