@@ -21,9 +21,14 @@
     path: /etc/ssh/sshd_config
     regexp: '^PasswordAuthentication'
     line: 'PasswordAuthentication yes'
-  notify:
-    - restart sshd
 
+- name: restart ssh and sshd service
+  service:
+    name: "{{ item }}"
+    state: restarted
+  loop:
+    - ssh
+    - sshd
 - name: Install usg package
   apt:
     name: usg
@@ -32,6 +37,6 @@
 - name: Audit Ubuntu system for CIS compliance
   command: "usg audit {{ level_2 }}"
 
-- name: Fix CIS Level 1 server audit findings
+- name: Fix CIS required Level server audit findings
   command: "usg fix {{ level_2 }}"
 
