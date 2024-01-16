@@ -1,0 +1,4 @@
+---
+# tasks file for prometheus
+- import_tasks: debian.yml
+- import_tasks: service.yml

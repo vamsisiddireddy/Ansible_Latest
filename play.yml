@@ -54,3 +54,6 @@
   - name: cis-benchmark
     tags:
       - cis-benchmark
+  - name: prometheus
+    tags:
+      - prometheus
