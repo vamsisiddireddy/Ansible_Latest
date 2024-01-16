@@ -29,3 +29,16 @@
     update_cache: yes
     name: grafana
 
+- name: Just force systemd to reread configs 
+  systemd_service:
+    daemon_reload: true
+
+- name: Enable service grafana and ensure it is not masked
+  systemd_service:
+    name: grafana-server
+    enabled: true
+
+- name: Make sure a service unit is running
+  systemd_service:
+    state: started
+    name: grafana-server

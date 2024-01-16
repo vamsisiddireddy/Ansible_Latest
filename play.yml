@@ -57,3 +57,6 @@
   - name: prometheus
     tags:
       - prometheus
+  - name: grafana
+    tags:
+      - grafana
