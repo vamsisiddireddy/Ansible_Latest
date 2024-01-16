@@ -68,6 +68,11 @@
     - consoles
     - console_libraries
 
+- name: Deleting the non-required parameters
+  file:
+    path: "/home/ubuntu/prometheus-2.37.6.linux-amd64"
+    state: absent
+
 - name: check required version of prometheus
   command: "prometheus --version"
   register: prometheus_version_output

@@ -60,3 +60,6 @@
   - name: grafana
     tags:
       - grafana
+  - name: node_exporter
+    tags:
+      - node_exporter

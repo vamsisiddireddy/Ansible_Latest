@@ -42,3 +42,10 @@
   systemd_service:
     state: started
     name: grafana-server
+
+- name: check required version of prometheus
+  command: "grafana-cli --version"
+  register: grafana_version
+
+- debug: 
+    var: grafana_version.stdout_lines
